@@ -7,8 +7,11 @@ public class Session6Plane {
             Plane plane2 = new Plane(95, 150, "BB-5555", "Paris");
 
             plane1.showInfo();
+            plane1.setDestination("Rome");
+            plane1.showInfo();
             System.out.println("------------------");
             plane2.showInfo();
+
         }
     }
 

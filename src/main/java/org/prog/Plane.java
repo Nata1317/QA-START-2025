@@ -5,6 +5,8 @@ public class Plane {
     int maxPassengers;
     String flightId;
     String destination;
+    public void setDestination(String destination){
+        this.destination = destination;}
 
      public Plane(int currentPassengers, int maxPassengers, String flightId, String destination) {
         this.currentPassengers = currentPassengers;
@@ -18,5 +20,8 @@ public class Plane {
         System.out.println("Max passengers: " + maxPassengers);
         System.out.println("Flight ID: " + flightId);
         System.out.println("Destination: " + destination);
+
+
+
     }
 }
