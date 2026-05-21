@@ -6,7 +6,7 @@ public class Plane {
     String flightId;
     String destination;
 
-    public Plane(int currentPassengers, int maxPassengers, String flightId, String destination) {
+     public Plane(int currentPassengers, int maxPassengers, String flightId, String destination) {
         this.currentPassengers = currentPassengers;
         this.maxPassengers = maxPassengers;
         this.flightId = flightId;
