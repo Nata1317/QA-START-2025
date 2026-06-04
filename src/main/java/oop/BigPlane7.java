@@ -15,6 +15,9 @@ public class BigPlane7 {
      public int getAvailableSeats() {
          return maxPassengers - currentPassengers;
      }
+     public double getSeatsTakenPercentage(){
+        return (double) currentPassengers / maxPassengers * 100;
+     }
 
     public void showInfo() {
         System.out.println("Current passengers: " + currentPassengers);
@@ -22,6 +25,7 @@ public class BigPlane7 {
         System.out.println("Flight ID: " + flightId);
         System.out.println("Destination: " + destination);
         System.out.println("Available seats:" + getAvailableSeats());
+        System.out.printf("Seats taken: %.2f%%%n", getSeatsTakenPercentage());
         System.out.println("---------------");
 
 

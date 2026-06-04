@@ -25,7 +25,7 @@ public class Session7BigPlane7 {
         for (BigPlane7 plane : planes) {
             plane.showInfo();
         }
-        System.out.println("Planes wiht half or less seats taken:" + planesWithHalfOrLess);
+        System.out.println("Planes with half or less seats taken:" + planesWithHalfOrLess);
 
     }
 }
