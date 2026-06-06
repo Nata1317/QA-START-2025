@@ -1,7 +1,5 @@
 package org.prog.session2;
 
-import org.prog.session1.Car;
-
 public class AutomationSession2 {
 
     /**
