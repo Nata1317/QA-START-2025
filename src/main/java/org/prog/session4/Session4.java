@@ -16,8 +16,10 @@ public class Session4 {
     public static void main(String[] args) {
         Car car1 = new Car();
         car1.color = "red";
+        car1.model = "BMW";
         Car car2 = new Car();
         car2.color = "red";
+        car2.model = "BMW";
 
 //        String s1 = "red";
 //        String s2 = "red";

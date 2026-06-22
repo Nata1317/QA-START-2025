@@ -4,6 +4,11 @@ package org.prog.session1;
 public class Car {
 
     public String color;
+    public String model;
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public void goTo() {
         System.out.println(color + " car is going somewhere");
@@ -13,14 +18,14 @@ public class Car {
     public boolean equals(Object obj) {
         if (obj instanceof Car) {
             Car car = (Car) obj;
-            return this.color.equals(car.color);
+            return this.color.equals(car.color) && this.model.equals(car.model);
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return color.hashCode();
+        return color.hashCode() + model.hashCode();
     }
 
     @Override
