@@ -30,7 +30,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car : " + color;
+        return "Car : " + model + " " + color;
     }
 
     public String getColor() {
