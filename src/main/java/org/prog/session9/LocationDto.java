@@ -8,4 +8,5 @@ import lombok.Data;
 public class LocationDto {
     private StreetDto street;
     private CoordinatesDto coordinates;
+    private String City;
 }
