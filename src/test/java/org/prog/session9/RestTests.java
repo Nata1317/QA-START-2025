@@ -45,6 +45,15 @@ public class RestTests {
         validatableResponse.contentType(ContentType.JSON);
         validatableResponse.body("results.gender", Matchers.hasItem("male"));
         validatableResponse.body("results.gender", Matchers.hasItem("female"));
+        validatableResponse.body("results.location.street.number",
+                Matchers.everyItem(Matchers.notNullValue()));
+        validatableResponse.body("results.location.street.name",
+                Matchers.everyItem(Matchers.notNullValue()));
+        validatableResponse.body("results.location.coordinates.latitude",
+                Matchers.everyItem(Matchers.notNullValue()));
+        validatableResponse.body("results.location.coordinates.longitude",
+                Matchers.everyItem(Matchers.notNullValue()));
+
 
         //        List<String> values = response.jsonPath()
 //                .get("results.findAll { it.gender == 'female' }.collect { it.name.first + ' ' + it.name.last }");
@@ -57,7 +66,7 @@ public class RestTests {
         RestAssured.given()
                 .baseUri("https://randomuser.me/")
                 .basePath("api/")
-                .queryParam("inc", "gender,name,nat")
+                .queryParam("inc", "gender,name,nat,location")
                 .queryParam("results", 3)
                 .queryParam("noinfo")
                 .get()
@@ -65,7 +74,15 @@ public class RestTests {
                 .statusCode(200)
                 .contentType(ContentType.JSON)
                 .body("results.gender", Matchers.hasItem("male"))
-                .body("results.gender", Matchers.hasItem("female"));
+                .body("results.gender", Matchers.hasItem("female"))
+                .body("results.location.street.number",
+                        Matchers.everyItem(Matchers.notNullValue()))
+                .body("results.location.street.name",
+                Matchers.everyItem(Matchers.notNullValue()))
+                .body("results.location.coordinates.latitude",
+                Matchers.everyItem(Matchers.notNullValue()))
+                .body("results.location.coordinates.longitude",
+                Matchers.everyItem(Matchers.notNullValue()));
     }
 
     private RequestSpecification generateRequestSpecification(String baseUri) {
@@ -73,7 +90,7 @@ public class RestTests {
         requestSpecification.baseUri(baseUri);
         requestSpecification.basePath("api/");
 
-        requestSpecification.queryParam("inc", "gender,name,nat");
+        requestSpecification.queryParam("inc", "gender,name,nat,location");
         requestSpecification.queryParam("results", 3);
         requestSpecification.queryParam("noinfo");
         return requestSpecification;
