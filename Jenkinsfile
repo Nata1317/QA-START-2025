@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn clean test -Dbrowser=jenkins_grid'
             }
         }
     }
