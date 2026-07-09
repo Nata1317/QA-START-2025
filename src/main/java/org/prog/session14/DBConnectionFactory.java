@@ -14,10 +14,11 @@ public class DBConnectionFactory {
 
         if (browser != null && browser.contains("jenkins")) {
             return DriverManager.getConnection(
-                    "jdbc:mysql://docker-test-db-1:3306/db", "root", "password");
+                    "jdbc:mysql://docker-test-db-1:3306/testdb",
+                    "root", "rootpass");
         } else {
             return DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/db", "root", "password");
+                    "jdbc:mysql://localhost:3306/testdb", "root", "rootpass");
         }
         }
 }
