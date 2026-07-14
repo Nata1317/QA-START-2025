@@ -24,7 +24,7 @@ public class MySqlTests {
     public void beforeSuite() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/testdb", "root", "rootpass");
+                "jdbc:mysql://localhost:3306/db", "root", "password");
     }
 
     @AfterSuite

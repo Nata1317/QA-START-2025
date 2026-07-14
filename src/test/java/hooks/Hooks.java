@@ -13,8 +13,8 @@ public class Hooks {
     @Before
     public void before() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb",
-                "root", "rootpass");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db",
+                "root", "password");
     }
 
     @After

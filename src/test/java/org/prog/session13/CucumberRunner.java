@@ -18,7 +18,10 @@ import java.util.HashMap;
 @CucumberOptions(
 //        tags = "@work-in-progress",
         features = "src/test/resources/features",
-        glue = "org.prog.session11.steps",
+        glue = {
+                "stepdefinitions",
+                "hooks"
+        },
         plugin = {
                 "pretty",
                 "json:target/cucumber-reports/Cucumber.json",
