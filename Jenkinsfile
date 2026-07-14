@@ -10,7 +10,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean test -Dbrowser=jenkins_grid'
+                withMaven(maven: 'Maven-3.9.9') {
+                    sh 'mvn clean test'
+
+
+        }
             }
         }
     }
