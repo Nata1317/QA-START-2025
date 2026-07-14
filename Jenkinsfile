@@ -8,14 +8,12 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                withMaven(maven: 'Maven-3.9.9') {
-                    sh 'mvn clean test'
-
-
-        }
-            }
-        }
-    }
-}
+       stage('Build') {
+           steps {
+               withMaven(maven: 'Maven-3.9.9') {
+                   sh 'mvn clean test -Dbrowser=jenkins_grid'
+               }
+           }
+       }
+       }
+       }
